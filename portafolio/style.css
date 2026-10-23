@@ -1,0 +1,581 @@
+/* Reset y estilos base */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    background-color: #0a0a0a;
+    color: #e5e5e5;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Contenedor */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Header y Navegación */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1f1f1f;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    min-height: 70px;
+}
+
+.nav__logo-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
+
+.nav__logo-link:hover {
+    color: #60a5fa;
+}
+
+.nav__menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav__link {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+}
+
+.nav__link:hover {
+    color: #ffffff;
+}
+
+.nav__link:hover::after {
+    width: 100%;
+}
+
+/* Botón menú móvil */
+.nav__toggle {
+    display: none;
+    background: transparent;
+    border: 2px solid #1f1f1f;
+    color: #e5e5e5;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav__toggle:hover {
+    border-color: #3b82f6;
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+.nav__toggle-bar {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #e5e5e5;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Secciones */
+.section {
+    padding: 100px 0 60px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.section:first-of-type {
+    padding-top: 120px;
+}
+
+.section__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.section__description {
+    text-align: center;
+    color: #a3a3a3;
+    margin-bottom: 3rem;
+    font-size: 0.95rem;
+}
+
+/* Sección INICIO */
+.inicio {
+    min-height: 100vh;
+    padding-top: 120px;
+}
+
+.inicio__content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.inicio__title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.inicio__info {
+    background-color: #111111;
+    border: 1px solid #1f1f1f;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.inicio__info:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+.inicio__item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #1f1f1f;
+    color: #e5e5e5;
+}
+
+.inicio__item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.inicio__label {
+    color: #60a5fa;
+    font-weight: 600;
+    display: inline-block;
+    min-width: 200px;
+}
+
+/* Sección SOBRE MÍ */
+.sobre-mi__content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sobre-mi__text {
+    background-color: #111111;
+    border: 1px solid #1f1f1f;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.sobre-mi__text:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+.sobre-mi__subtitle {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.sobre-mi__subtitle:first-of-type {
+    margin-top: 0;
+}
+
+.sobre-mi__paragraph {
+    color: #d4d4d4;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* Sección HABILIDADES */
+.habilidades__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.habilidad__card {
+    background-color: #111111;
+    border: 1px solid #1f1f1f;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.habilidad__card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+.habilidad__header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    padding: 1rem 1.5rem;
+    border-bottom: 2px solid #3b82f6;
+}
+
+.habilidad__name {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.habilidad__content {
+    padding: 1.25rem 1.5rem;
+}
+
+.habilidad__level,
+.habilidad__status {
+    color: #d4d4d4;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.habilidad__status {
+    margin-bottom: 0;
+}
+
+/* Sección PROYECTOS */
+.proyectos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.proyecto__card {
+    background-color: #111111;
+    border: 1px solid #1f1f1f;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.proyecto__card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+.proyecto__header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    padding: 1rem 1.5rem;
+    border-bottom: 2px solid #3b82f6;
+}
+
+.proyecto__title {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.proyecto__content {
+    padding: 1.25rem 1.5rem;
+}
+
+.proyecto__type,
+.proyecto__description,
+.proyecto__technologies {
+    color: #d4d4d4;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.proyecto__description {
+    color: #a3a3a3;
+    line-height: 1.5;
+}
+
+.proyecto__technologies {
+    margin-bottom: 0;
+    color: #60a5fa;
+    font-weight: 500;
+}
+
+/* Sección CONTACTO */
+.contacto__content {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contacto__item {
+    background-color: #111111;
+    border: 1px solid #1f1f1f;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.contacto__item:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+.contacto__label {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contacto__link {
+    color: #60a5fa;
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.3s ease;
+}
+
+.contacto__link:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+}
+
+/* Botón volver al inicio */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background-color: #1e3a8a;
+    color: #ffffff;
+    border: 2px solid #3b82f6;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.back-to-top:hover {
+    background-color: #3b82f6;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.back-to-top.visible {
+    display: flex;
+}
+
+/* Footer */
+.footer {
+    background-color: #0a0a0a;
+    border-top: 1px solid #1f1f1f;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer__text {
+    color: #737373;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+
+/* Tablets */
+@media (max-width: 968px) {
+    .nav__menu {
+        gap: 1.5rem;
+    }
+    
+    .inicio__title {
+        font-size: 2.3rem;
+    }
+    
+    .section__title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    .nav__menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: rgba(10, 10, 10, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        gap: 0;
+        border-bottom: 1px solid #1f1f1f;
+    }
+    
+    .nav__menu.active {
+        left: 0;
+    }
+    
+    .nav__item {
+        margin: 1rem 0;
+        width: 100%;
+    }
+    
+    .nav__link {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .nav__link::after {
+        display: none;
+    }
+    
+    .nav__toggle {
+        display: block;
+    }
+    
+    .section {
+        padding: 90px 0 50px;
+    }
+    
+    .section:first-of-type {
+        padding-top: 100px;
+    }
+    
+    .inicio__title {
+        font-size: 2rem;
+    }
+    
+    .section__title {
+        font-size: 1.9rem;
+    }
+    
+    .inicio__info {
+        padding: 1.5rem;
+    }
+    
+    .inicio__label {
+        display: block;
+        min-width: auto;
+        margin-bottom: 0.25rem;
+    }
+    
+    .sobre-mi__text {
+        padding: 1.5rem;
+    }
+    
+    .sobre-mi__paragraph {
+        text-align: left;
+    }
+    
+    .habilidades__grid,
+    .proyectos__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .habilidad__content,
+    .proyecto__content {
+        padding: 1rem 1.25rem;
+    }
+    
+    .contacto__item {
+        padding: 1.25rem;
+    }
+    
+    .back-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 480px) {
+    .inicio__title {
+        font-size: 1.75rem;
+    }
+    
+    .section__title {
+        font-size: 1.7rem;
+    }
+    
+    .nav__logo-link {
+        font-size: 1.1rem;
+    }
+}
